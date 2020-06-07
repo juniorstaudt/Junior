@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Product" representedClassName="Product" syncable="YES" codeGenerationType="class">
+        <attribute name="creditCard" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="dolarTaxValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dolarTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable"/>
+        <attribute name="iofValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String"/>
+        <attribute name="realTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="purchasedState" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="products" inverseEntity="State"/>
+    </entity>
+    <entity name="State" representedClassName="State" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="taxRate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="purchasedState" inverseEntity="Product"/>
+    </entity>
+    <elements>
+        <element name="Product" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="State" positionX="192.96484375" positionY="71.32421875" width="128" height="88"/>
+    </elements>
+</model>
